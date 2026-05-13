@@ -52,16 +52,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemCount: studentDataList.length,
                 itemBuilder: (context, index){
                   final StudentDataModel dataModel=studentDataList[index];
-                  return ListTile(
-                    title: Text("Name: ${dataModel.name}",style: TextStyle(fontWeight: FontWeight.bold)),
-                    subtitle: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Roll: ${dataModel.rollNumber.toString()}"),
-                        Text("Course: ${dataModel.course}"),
-                        Divider(),
-                      ],
+                  return Card(
+                    elevation: 10,
+                    color: Colors.grey.shade800,
+                    child: ListTile(
+                      title: Text("Name: ${dataModel.name}",style: TextStyle(fontWeight: FontWeight.bold)),
+                      subtitle: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Roll: ${dataModel.rollNumber.toString()}",style: TextStyle(fontSize: 12)),
+                          Text("Course: ${dataModel.course}",style: TextStyle(fontSize: 12)),
+                          //Divider(),
+                        ],
+                      ),
                     ),
                   );
                 });
